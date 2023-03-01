@@ -73,3 +73,5 @@ My name is Jorge, I am a web applications developer who likes to tinker around w
     </tr>
   </tbody>
 </table>
+
+![Snake animation](https://github.com/jorgefelico/jorgefelico/blob/output/github-contribution-snake.svg)
