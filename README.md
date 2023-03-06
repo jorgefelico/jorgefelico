@@ -2,7 +2,7 @@
 
 Welcome to my page!
 
-My name is Jorge, I am a web applications developer who likes to tinker around with new technologies as they come. I am currently located in 🇺🇸 **Louisville, KY**.
+I'm Jorge Felico! I specialize in Javascript technologies such as React, Angular, Typescript, Webpack, and Nextjs. Right now, I'm working on some cool open source projects like DateDreamer and RestaurantGrades, which allow developers to provide pre-built calendar components and help Louisville citizens search for restaurant health inspection grades and violations. When I'm not working, I love exploring new technologies and creating positive change through technology. If you're interested in collaborating, feel free to reach out!
 
 ### A few of the techs I use
 <p>
