@@ -79,7 +79,7 @@ I'm Jorge Felico! I specialize in Javascript technologies such as React, Angular
 ### See more of me
 - [My Website](https://jorgefelico.com)
 - [LinkedIn](https://linkedin.com/in/jorgefelico)
-- [Twitter](https://twitter.com)
+- [Twitter](https://twitter.com/jorgefelico)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/jorgefelico/jorgefelico/blob/output/github-snake-dark.svg" />
