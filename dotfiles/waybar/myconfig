@@ -15,6 +15,7 @@
 	    "memory",
 	    "temperature",
 	    "battery",
+	    "custom/fan"
 	]
     },
     "group/connections": {
@@ -216,6 +217,13 @@
         },
         "on-click": "pavucontrol"
     },
+   "custom/fan": {
+  "exec": "~/dotfiles/waybar/scripts/fan.sh",
+  "return-type": "json",
+  "interval": 5,
+  "format": " {} 󰈐 ",
+  "tooltip": false
+}, 
     "custom/power": {
         "format" : "",
 		"tooltip": false,
