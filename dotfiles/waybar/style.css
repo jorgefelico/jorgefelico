@@ -1,0 +1,330 @@
+@define-color bar-bg rgba(31, 35, 40, 0.95);
+@define-color main-bg #10141B;
+@define-color main-fg #93cee9;
+@define-color danger #FF5C5C;
+@define-color warning #E7C547;
+@define-color active #4CAF50;
+@define-color wb-act-bg #93cee9;
+@define-color wb-act-fg #1f2328;
+@define-color good #A8D68F;
+@define-color wb-hvr-bg #93cee9;
+@define-color wb-hvr-fg #1f2328;
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "JetBrainsMono Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: transparent;/* @bar-bg; */
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+}
+
+window#waybar.chromium {
+    border: none;
+}
+
+window > box.horizontal {
+    padding: 4px;
+    margin-top: 6px;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+
+
+/* you can set a style on hover for any module like this */
+#pulseaudio:hover {
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: @main-fg;
+    border-radius: 4px;
+    margin: 0px 4px;
+}
+
+#workspaces button:hover {
+    background: @main-fg;
+    color: @main-bg;
+}
+
+#workspaces button.focused {
+    
+}
+
+#workspaces button.active {
+    background: @main-fg;
+    color: @main-bg;
+    padding: 0 16px;
+}
+
+#workspaces button.urgent {
+    background: @danger;
+    color: @main-bg;
+}
+
+#window {
+    color: @main-fg;
+}
+
+
+#mode {
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0px 10px;
+    color: @main-fg;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+.modules-left, .modules-center, #hardware, #connections, #custom-power {
+    background-color: @main-bg;
+    border-radius: 8px;
+    margin: 0 8px;
+}
+
+.modules-center, #hardware {
+    padding: 4px  12px;
+}
+
+
+#clock {
+    color: @main-fg;
+    padding: 0px 20px;
+}
+
+#battery, #battery.good {
+    color: @good;
+}
+
+#battery.warning {
+    color: @warning;
+}
+
+#battery.charging, #battery.plugged {
+    color: @good;
+}
+
+@keyframes blink {
+    to {
+        color: @danger;
+    }
+}
+
+
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    color: @main-fg;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    color: @main-fg;
+    padding-right: 15px;
+}
+
+/* Optionally style different profiles */
+#power-profiles-daemon.performance {
+  color: @danger; /* red tone for performance */
+}
+
+#power-profiles-daemon.balanced {
+  color: @warning; /* yellow tone for balanced */
+}
+
+#power-profiles-daemon.power-saver {
+  color: @main-fg; /* default cyan-blue for power saver */
+}
+
+#cpu, #cpu.good {
+ color: @main-fg; 
+}
+
+#cpu.warning {
+  color: @warning;
+}
+
+#cpu.critical {
+  color: @danger;
+}
+
+label:focus {
+}
+
+#memory, #memory.good {
+ color: @main-fg; 
+}
+
+#memory.warning {
+  color: @warning;
+}
+
+#memory.critical {
+  color: @danger;
+}
+
+#disk {
+}
+
+#backlight {
+}
+
+#network {
+}
+
+#network.disconnected {
+}
+
+#pulseaudio {
+    color: @main-fg;
+}
+
+#pulseaudio.muted {
+    color: @danger;
+}
+
+#wireplumber {
+    color: #000000;
+}
+
+#wireplumber.muted {
+}
+
+#custom-media {
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+}
+
+#custom-media.custom-vlc {
+}
+
+#temperature {
+}
+
+#temperature.critical {
+}
+
+#tray {
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#idle_inhibitor {
+    color: @main-fg;
+}
+
+#idle_inhibitor.activated {
+    color: #4CAF50;
+}
+
+
+#keyboard-state {
+    color: @main-fg;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+   color: @danger;
+}
+
+#scratchpad {
+}
+
+#scratchpad.empty {
+}
+
+#privacy {
+    padding: 0;
+}
+
+#privacy-item {
+    padding: 0 5px;
+    color: white;
+}
+
+#privacy-item.screenshare {
+}
+
+#privacy-item.audio-in {
+}
+
+#privacy-item.audio-out {
+}
+
+#custom-power {
+margin-right: 0px;
+border-radius: 0;
+padding: 0 20px;
+font-size: 20px;
+background-color: transparent;
+}

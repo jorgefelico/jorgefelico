@@ -76,6 +76,9 @@ I'm Jorge Felico! I specialize in Javascript technologies such as React, Angular
   </tbody>
 </table>
 
+### Arch Linux DotFiles
+Check out my dotfiles backup of my waybar and hyperlnd config files from my Arch linux desktop.
+
 ### See more of me
 - [My Website](https://jorgefelico.com)
 - [LinkedIn](https://linkedin.com/in/jorgefelico)
