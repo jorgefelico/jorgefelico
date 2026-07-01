@@ -10,6 +10,7 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 alias vim=nvim
 alias wa="ssh jorge@192.168.68.50"
+alias dt="nvim ."
 # opencode
 export PATH=/home/jorge/.opencode/bin:$PATH
 

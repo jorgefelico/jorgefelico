@@ -1,11 +1,16 @@
 " Plugins
 call plug#begin()
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" Neo-tree and its modern dependencies
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-tree/nvim-web-devicons' " Required for UI folder/file icons
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v3.x' }
 
 " Core Completion Engine
 Plug 'hrsh7th/nvim-cmp'
@@ -28,6 +33,13 @@ call plug#end()
 lua << EOF
 -- Set completeopt for a better completion experience
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
+
+-- Minimal setup invocation for Neo-tree
+require("neo-tree").setup({
+  window = {
+    width = 30,
+  }
+})
 
 local cmp = require('cmp')
 
@@ -100,7 +112,8 @@ let g:airline_powerline_fonts = 1
 let g:hybrid_reduced_contrast = 1
 let g:hybrid_custom_term_colors = 1
 
-map <C-n> :NERDTreeToggle<CR>
+" Updated keymap for Neo-tree
+nnoremap <C-n> :Neotree toggle filesystem left<CR>
 set number
 
 " Set Proper Tabs
