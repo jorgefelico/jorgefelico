@@ -77,7 +77,7 @@ I'm Jorge Felico! I specialize in Javascript technologies such as React, Angular
 </table>
 
 ### Arch Linux DotFiles
-Check out my dotfiles backup of my waybar and hyperlnd config files from my Arch linux desktop.
+Check out my dotfiles backup of my waybar and hyperlnd config files from my Arch linux desktop. I generally use a config manager like Stow. Easily put these to use by running `stow -t ~ .`
 
 ### See more of me
 - [My Website](https://jorgefelico.com)
