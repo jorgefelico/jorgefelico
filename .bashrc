@@ -21,3 +21,4 @@ export NVM_DIR="$HOME/.nvm"
 #test
 # Added by Antigravity CLI installer
 export PATH="/home/jorge/.local/bin:$PATH"
+. "$HOME/.cargo/env"
