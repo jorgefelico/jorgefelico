@@ -20,9 +20,6 @@
     "memory",
     "custom/power"
   ],
-  "hyprland/window": {
-    "max-length": 50
-  },
   "battery": {
     "interval": 60,
     "format": "{capacity}% {icon}",
