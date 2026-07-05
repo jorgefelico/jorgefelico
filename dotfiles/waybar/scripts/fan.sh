@@ -20,4 +20,3 @@ fi
 
 # Output JSON
 echo "{\"text\": \"$fan\", \"class\": \"$class\"}"
-
