@@ -43,7 +43,7 @@ window#waybar {
 #idle_inhibitor,
 #custom-power,
 #power-profiles-daemon,
-#temp {
+#custom-temp {
   border-radius: 8px;
   padding: 5px 8px;
   background: @dark-8;
@@ -119,10 +119,10 @@ tooltip label {
   color: #f45866;
 }
 
-#temperature.warning {
+#custom-temp.warning {
   color: #fee686;
 }
 
-#temperature.critical {
+#custom-temp.critical {
   color: #f45866;
 }
