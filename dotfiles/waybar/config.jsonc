@@ -15,6 +15,7 @@
     "battery",
     "bluetooth",
     "network",
+    "group/temp",
     "cpu",
     "memory",
     "custom/power"
@@ -88,7 +89,7 @@
     "on-click": "nmrs"
   },
   "clock": {
-    "format": "󰥔 {:%a, %b. %d %I:%M %p}",
+    "format": "󰣇 {:%a, %b. %d %I:%M %p}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "format": {
@@ -127,7 +128,7 @@
   },
   "power-profiles-daemon": {
     "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}nCPU driver: {cpu_driver}nPlatform driver: {platform_driver}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {
       "default": "",
@@ -135,6 +136,19 @@
       "balanced": "",
       "power-saver": ""
     }
+  },
+  "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input",
+    "critical-threshold": 80,
+    // "format-critical": "{temperatureC}°C {icon}",
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
   },
   "custom/fan": {
     "exec": "~/dotfiles/waybar/scripts/fan.sh",
@@ -144,7 +158,7 @@
     "tooltip": false
   },
   "custom/power": {
-    "format": "power ",
+    "format": "",
     "tooltip": false,
     "menu": "on-click",
     "menu-file": "$HOME/dotfiles/waybar/power_menu.xml",
@@ -154,6 +168,13 @@
       "suspend": "systemctl suspend",
       "hibernate": "systemctl hibernate"
     }
+  },
+  "group/temp": {
+    "orientation": "horizontal",
+    "modules": [
+      "temperature",
+      "custom/fan"
+    ]
   },
   "group/volume": {
     "orientation": "horizontal",

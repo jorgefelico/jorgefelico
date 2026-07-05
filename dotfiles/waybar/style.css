@@ -40,7 +40,10 @@ window#waybar {
 #cpu,
 #memory,
 #volume,
-#idle_inhibitor {
+#idle_inhibitor,
+#custom-power,
+#power-profiles-daemon,
+#temp {
   border-radius: 8px;
   padding: 5px 8px;
   background: @dark-8;
@@ -102,4 +105,24 @@ tooltip {
 
 tooltip label {
   color: white;
+}
+
+#power-profiles-daemon.power-saver {
+  color: #42ff9f;
+}
+
+#power-profiles-daemon.balanced {
+  color: #8eecf5;
+}
+
+#power-profiles-daemon.performance {
+  color: #f45866;
+}
+
+#temperature.warning {
+  color: #fee686;
+}
+
+#temperature.critical {
+  color: #f45866;
 }
