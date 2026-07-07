@@ -1,8 +1,7 @@
 {
   "layer": "top",
   "modules-left": [
-    "hyprland/workspaces",
-    "hyprland/submap",
+    "niri/workspaces",
     "group/media"
   ],
   "modules-center": [
@@ -62,8 +61,8 @@
     "on-click": "blueman-manager"
   },
   "cpu": {
-    "interval": 10,
-    "format": " {}%",
+    "interval": 2,
+    "format": " {usage}%",
     "max-length": 10,
     "on-click": "exec kitty -e btop"
   },
@@ -135,7 +134,7 @@
     }
   },
   "custom/temp": {
-    "exec": "$HOME/dotfiles/waybar/scripts/temp-fan.sh",
+    "exec": "$HOME/.config/waybar/scripts/temp-fan.sh",
     "return-type": "json",
     "interval": 10,
     "format": "{}",
@@ -145,7 +144,7 @@
     "format": "",
     "tooltip": false,
     "menu": "on-click",
-    "menu-file": "$HOME/dotfiles/waybar/power_menu.xml",
+    "menu-file": "$HOME/.config/waybar/power_menu.xml",
     "menu-actions": {
       "shutdown": "shutdown",
       "reboot": "reboot",
@@ -175,7 +174,7 @@
     ]
   },
   "custom/media-now-playing": {
-    "exec": "$HOME/dotfiles/waybar/custom_modules/media/media-now-playing.sh",
+    "exec": "$HOME/.config/waybar/custom_modules/media/media-now-playing.sh",
     "escape": true,
     "tooltip": false,
     "on-click": "playerctl play-pause",
@@ -183,11 +182,11 @@
     "on-click-right": "playerctl next"
   },
   "custom/media-animation": {
-    "exec": "$HOME/dotfiles/waybar/custom_modules/media/media-animation.sh",
+    "exec": "$HOME/.config/waybar/custom_modules/media/media-animation.sh",
     "tooltip": false
   },
   "custom/media-time": {
-    "exec": "$HOME/dotfiles/waybar/custom_modules/media/media-time.sh",
+    "exec": "$HOME/.config/waybar/custom_modules/media/media-time.sh",
     "escape": true,
     "tooltip": false,
     "interval": 1

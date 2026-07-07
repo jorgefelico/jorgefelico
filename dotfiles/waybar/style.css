@@ -8,7 +8,7 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
   font-family: JetBrainsMono Nerd Font Propo;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 window#waybar {
@@ -44,10 +44,10 @@ window#waybar {
 #custom-power,
 #power-profiles-daemon,
 #custom-temp {
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 5px 8px;
   background: @dark-8;
-  margin: 5px 10px 5px 0px;
+  margin: 5px 6px 5px 0px;
 }
 
 #pulseaudio-slider {
@@ -125,4 +125,8 @@ tooltip label {
 
 #custom-temp.critical {
   color: #f45866;
+}
+
+#clock {
+  margin-right: 20px;
 }

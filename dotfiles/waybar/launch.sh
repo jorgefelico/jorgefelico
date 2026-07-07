@@ -4,7 +4,7 @@
 killall waybar
 
 if [[ $USER = "jorge" ]]; then
-  waybar -c ~/dotfiles/waybar/config.jsonc -s ~/dotfiles/waybar/style.css
+  waybar -c ~/.config/waybar/config.jsonc -s ~/.config/waybar/style.css
 else
   waybar &
 fi
