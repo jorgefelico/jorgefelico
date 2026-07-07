@@ -375,10 +375,9 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+Space hotkey-overlay-title="Run an Application: wofi" { spawn-sh "wofi --show drun"; }
-    //Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "swaylock"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "swaylock --screenshots --ignore-empty-password --daemonize --indicator-caps-lock --indicator --clock --timestr '󰥔 %Hh %Mm %Ss' --datestr '󰃭 %b-%d-%Y' --show-failed-attempts --indicator-idle-visible"; }
     Mod+B hotkey-overlay-title="Open Browser" { spawn "/opt/google/chrome/chrome"; }
-    Mod+Shift+B {spawn-sh "~/dotfiles/waybar/launch.sh";}
+    Mod+Shift+B {spawn-sh "~/.config/waybar/launch.sh";}
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
