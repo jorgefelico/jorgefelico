@@ -110,6 +110,7 @@ source $ZSH/oh-my-zsh.sh
 alias vim=nvim
 alias wa="ssh jorge@192.168.68.50"
 alias dt="nvim ."
+alias anydesk="GDK_BACKEND=x11 anydesk"
 
 if command -v bat >/dev/null 2>&1; then
   alias cat="bat"
