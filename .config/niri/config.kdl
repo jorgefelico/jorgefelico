@@ -377,7 +377,7 @@ binds {
     Mod+Space hotkey-overlay-title="Run an Application" { spawn-sh "wofi --show drun"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "swaylock --screenshots --ignore-empty-password --daemonize --indicator-caps-lock --indicator --clock --timestr '󰥔 %Hh %Mm %Ss' --datestr '󰃭 %b-%d-%Y' --show-failed-attempts --indicator-idle-visible"; }
     //Mod+B hotkey-overlay-title="Open Chrome Browser" { spawn "/opt/google/chrome/chrome"; }
-    Mod+B hotkey-overlay-title="Open Zen Browser" { spawn "/opt/zen/zen"; }
+    Mod+B hotkey-overlay-title="Open Zen Browser" { spawn "/usr/bin/zen-browser"; }
     Mod+Shift+B hotkey-overlay-title="Reload Waybar" {spawn-sh "~/.config/waybar/launch.sh";}
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
