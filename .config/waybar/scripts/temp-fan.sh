@@ -1,30 +1,24 @@
 #!/usr/bin/env bash
 
-# Auto-detect coretemp hwmon by following the device symlink
+# 1. Grab the CPU temp using your existing auto-detection logic
 hwmon_base="/sys/class/hwmon"
 temp_val=""
-fan_val=""
 
 for hwmon in "$hwmon_base"/*/; do
-  # Detect coretemp for temperature
   if [ -z "$temp_val" ]; then
-    if [ -L "${hwmon}device" ]; then
-      dev=$(readlink -f "${hwmon}device" 2>/dev/null)
-      if echo "$dev" | grep -q "coretemp"; then
-        if [ -r "${hwmon}temp1_input" ]; then
-          temp_val=$(( $(<"${hwmon}temp1_input") / 1000 ))
-        fi
+    hwmon_name=$(cat "${hwmon}name" 2>/dev/null)
+    if echo "$hwmon_name" | grep -qE "k10temp|coretemp"; then
+      if [ -r "${hwmon}temp1_input" ]; then
+        temp_val=$(($(cat "${hwmon}temp1_input") / 1000))
+        break
       fi
     fi
   fi
-
-  # Detect fan from any hwmon that has a fan1_input
-  if [ -z "$fan_val" ] && [ -r "${hwmon}fan1_input" ]; then
-    fan_val=$(<"${hwmon}fan1_input")
-  fi
-
-  [ -n "$temp_val" ] && [ -n "$fan_val" ] && break
 done
+
+# 2. Grab the Fan Speed directly from the ACPI interface
+# We extract only the line containing "speed" and isolate the number
+fan_val=$(awk '/speed:/ {print $2}' /proc/acpi/ibm/fan 2>/dev/null)
 
 # Fallback defaults
 : "${temp_val:=0}"

@@ -8,7 +8,7 @@
     "clock"
   ],
   "modules-right": [
-    "power-profiles-daemon",
+    "custom/tlp",
     "idle_inhibitor",
     "group/volume",
     "battery",
@@ -115,23 +115,19 @@
     "ignored-sinks": [
       "Easy Effects Sink"
     ],
-    "on-click": "pavucontrol"
+    "on-click": "pwvucontrol"
   },
   "pulseaudio/slider": {
     "min": 0,
     "max": 100,
     "orientation": "horizontal"
   },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
-    }
+  "custom/tlp": {
+    "exec": "$HOME/.config/waybar/scripts/tlp-profile.sh",
+    "return-type": "json",
+    "interval": 30,
+    "format": "{}",
+    "tooltip": true
   },
   "custom/temp": {
     "exec": "$HOME/.config/waybar/scripts/temp-fan.sh",

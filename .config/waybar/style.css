@@ -42,7 +42,7 @@ window#waybar {
 #volume,
 #idle_inhibitor,
 #custom-power,
-#power-profiles-daemon,
+#custom-tlp,
 #custom-temp {
   border-radius: 6px;
   padding: 5px 8px;
@@ -107,15 +107,15 @@ tooltip label {
   color: white;
 }
 
-#power-profiles-daemon.power-saver {
+#custom-tlp.power-saver {
   color: #42ff9f;
 }
 
-#power-profiles-daemon.balanced {
+#custom-tlp.balanced {
   color: #8eecf5;
 }
 
-#power-profiles-daemon.performance {
+#custom-tlp.performance {
   color: #f45866;
 }
 

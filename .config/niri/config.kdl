@@ -273,13 +273,12 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "~/.config/waybar/launch.sh"
+spawn-at-startup "awww-daemon"
+spawn-at-startup "/home/jorge/.config/waybar/launch.sh"
 spawn-at-startup "mako"
-spawn-at-startup "aww-daemon"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "playerctld daemon"
-spawn-at-startup "awww-daemon"
-spawn-at-startup "aww" "img" "~/wallpaper.png"
+spawn-at-startup "awww" "img" "/home/jorge/wallpaper.png"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
