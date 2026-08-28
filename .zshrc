@@ -126,6 +126,9 @@ alias -- -='cd -'
 # opencode
 export PATH=/home/jorge/.opencode/bin:$PATH
 
+# ohmypi
+export PATH=/home/jorge/.local/bin:$PATH
+export LLAMA_CPP_BASE_URL=http://192.168.68.51:1234
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
